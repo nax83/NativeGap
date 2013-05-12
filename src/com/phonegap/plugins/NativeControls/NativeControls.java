@@ -59,7 +59,6 @@ public class NativeControls extends Plugin {
 			arg[1] = new String(args.getString(1));
 			
 			System.out.println("into addtext, text is: "+args.getString(1));
-			
 			this.webView.postMessage("nc_add_text", arg);
 			callbackContext.success("ok");
 			

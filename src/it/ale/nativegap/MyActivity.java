@@ -144,10 +144,7 @@ public class MyActivity extends Activity implements CordovaInterface {
    	public Object onMessage(String id, Object data) {
    		LOG.d("MHA", "onMessage(" + id + "," + data + ")");
    		
-   		if (MSG_INSTRUMENT.equals(id)) {
-   			final String fid = (String)data;
-   			
-   		} else if (MSG_ADDBTN.equals(id)) {
+   		if (MSG_ADDBTN.equals(id)) {
    			System.out.println("Adding button with Id " + id);
    			final String name = (String)data;
    			   			
@@ -169,7 +166,7 @@ public class MyActivity extends Activity implements CordovaInterface {
    			runOnUiThread(new Runnable() {
    	            public void run() {
    	            	int resId = getResources().getIdentifier(name, "id", getPackageName());
-   	            	ImageView b = (ImageView) findViewById(resId);
+   	            	View b = findViewById(resId);
    	            	b.setVisibility(View.VISIBLE);
    	    		}
    	        });
@@ -179,7 +176,7 @@ public class MyActivity extends Activity implements CordovaInterface {
    			runOnUiThread(new Runnable() {
    	            public void run() {
    	            	int resId = getResources().getIdentifier(name, "id", getPackageName());
-   	            	ImageView b = (ImageView) findViewById(resId);
+   	            	View b = findViewById(resId);
    	            	b.setVisibility(View.GONE);
    	    		}
    	        });
