@@ -149,7 +149,7 @@ public class MyActivity extends Activity implements CordovaInterface {
    			final String name = (String)data;
    			   			
    			int resId = getResources().getIdentifier(name, "id", getPackageName());
-   			ImageView b = (ImageView) findViewById(resId);
+   			View b = findViewById(resId);
    			b.setOnClickListener(new View.OnClickListener() {
    			
    				@Override
