@@ -41,39 +41,6 @@
         
         </RelativeLayout>
         
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true" >
-        
-        
-        <TextView
-            android:id="@+id/cliente"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:scaleType="fitXY"
-            android:textColor="@android:color/white"
-            android:gravity="center|left"
-            android:layout_marginLeft="5dp"
-            android:layout_weight="1"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-                
-        <TextView
-            android:id="@+id/codice"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="30dp"
-            android:scaleType="fitXY"
-            android:layout_marginRight="5dp"
-            android:gravity="center|right"
-            android:textColor="@android:color/white"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-        
-            </LinearLayout>
-
     </RelativeLayout>
 
     <org.apache.cordova.CordovaWebView
@@ -102,10 +69,4 @@
         android:src="@drawable/footer" />
     
     </RelativeLayout>
-
-    
-
-	
-
-
 </LinearLayout>

@@ -30,38 +30,28 @@ public class NativeControls extends Plugin {
 			if(callbackContext == null)System.out.println("why null??");
 			else System.out.println("ok");
 			clickCallback = callbackContext;
-			//this.webView.postMessage("nativeheader", "show");
-			
 			this.webView.postMessage("nc_instrument", "exit");
 			PluginResult pr = new PluginResult(PluginResult.Status.NO_RESULT);
 			pr.setKeepCallback(true);
 			clickCallback.sendPluginResult(pr);
-			
 		}else if(ACTION_ADDBTN.equals(action)){
-			
 			this.webView.postMessage("nc_add_button", args.getString(0));
 			callbackContext.success("ok");
-			
 		} else if(ACTION_SHOWBTN.equals(action)){
 			System.out.println("action showbtn");
 			this.webView.postMessage("showbtn", args.getString(0));
 			callbackContext.success("ok");
-			
 		} else if(ACTION_HIDEBTN.equals(action)){
 			this.webView.postMessage("hidebtn", args.getString(0));
 			callbackContext.success("ok");
-			
 		} else if(ACTION_ADDTEXT.equals(action)){
-			
 			String[] arg = new String[2];
-			
 			arg[0] = new String(args.getString(0));
 			arg[1] = new String(args.getString(1));
 			
 			System.out.println("into addtext, text is: "+args.getString(1));
 			this.webView.postMessage("nc_add_text", arg);
 			callbackContext.success("ok");
-			
 		}
 		
 		return true;
@@ -69,7 +59,6 @@ public class NativeControls extends Plugin {
 	
 	@Override
 	public Object onMessage(String id, Object data) {
-		// TODO Auto-generated method stub
 		if("nativeheader".equals(id))return null;
 		if ("nc_click".equals(id)) {
 			System.out.println("nativeheader nc_clicked");
@@ -82,15 +71,12 @@ public class NativeControls extends Plugin {
 				e.printStackTrace();
 			}
 			this.webView.loadUrl("javascript:window.plugins.nativeControls.clicked('" + d +"');");
-		
 		}
-		
 		return null;
 	}
 
 	@Override
 	public PluginResult execute(String arg0, JSONArray arg1, String arg2) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

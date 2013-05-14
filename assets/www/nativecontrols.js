@@ -64,16 +64,11 @@ NativeControls.prototype.clicked = function(id) {
 }
 
 NativeControls.prototype.showButton = function(button) {
-	
     cordova.exec(undefined, undefined, "NativeControls", "showbutton", [button.id]);
-    
-	
 };
 
 NativeControls.prototype.hideButton = function(button) {
-	
     cordova.exec(undefined, undefined, "NativeControls", "hidebutton", [button.id]);
-    
 };
 
 if (!window.plugins) {
